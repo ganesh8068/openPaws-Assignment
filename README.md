@@ -2,9 +2,20 @@
 
 This repository contains a prototype tool suite for scraping, parsing, and querying USDA APHIS Animal Welfare Act inspection reports. It transforms unstructured government PDFs into a normalized SQLite database and provides a simple CLI to interrogate the data.
 
-## Thinking and Approach
+## Product & User Considerations
 
-The core challenge of this project is extracting structured data from minimally structured PDF reports. My approach is divided into 4 primary steps:
+**Who is this for?**
+This tool is designed for animal advocacy organizations, investigative journalists, researchers, and policymakers.
+
+**How does it serve them?**
+Currently, extracting actionable insights from APHIS inspection reports requires reading through hundreds of unstructured PDFs. This tool liberates that data, allowing advocates to track repeat offenders, cross-reference violations by species or severity, and quickly identify systemic issues. By turning documents into queried data, it empowers organizations to build data-driven campaigns, target policy interventions, and optimize their advocacy efforts.
+
+**How would it work in the real world?**
+While this prototype is a CLI tool and local database, in a production environment, this parsing engine would run as an automated, scheduled pipeline (e.g., via Airflow or Cron). It would continuously monitor the USDA portal for new reports, process the PDFs, and update a centralized, cloud-hosted database (like PostgreSQL). This database would then power a public-facing web dashboard or API—allowing non-technical users to set up email alerts, generate graphs, and perform complex searches without needing to run Python scripts.
+
+## Technical Thinking and Approach
+
+The core technical challenge of this project is extracting structured data from minimally structured PDF reports. My approach is divided into 4 primary steps:
 
 1. **Data Acquisition (`scraper.py`)**: 
    Since the USDA APHIS portal relies on dynamic, complex Salesforce endpoints, directly scraping their search portal is unstable. Instead, this project uses the Data Liberation Project's combined CSV index to reliably resolve the direct PDF URLs and download 200+ raw records.
