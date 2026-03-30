@@ -1,5 +1,5 @@
 requests==2.31.0
 pdfplumber==0.11.0
 SQLAlchemy>=2.0.35
-typer[all]==0.11.1
+typer[all]>=0.15.1
 rich==13.7.1

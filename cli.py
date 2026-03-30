@@ -9,7 +9,7 @@ app = typer.Typer(help="OpenPAWS USDA APHIS Inspection Database CLI")
 console = Console()
 
 @app.command()
-def critical_violations(company: str, state: str, years: int = typer.Option(2, "--years", "-y")):
+def critical_violations(company: str, state: str, years: int = 2):
     """
     Get all critical violations for a company in a specific state over the past X years.
     """
@@ -79,7 +79,7 @@ def repeat_violators():
     console.print(table)
 
 @app.command()
-def species_violations(species: str, severity: str = typer.Option(None, "--severity", "-s")):
+def species_violations(species: str, severity: str = None):
     """
     Get violations affecting a specific species, optionally filtered by severity.
     """
