@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "D:\Projects\openPaws\dump_err.py", line 5, in <module>
+    import models
+  File "D:\Projects\openPaws\models.py", line 2, in <module>
+    from sqlalchemy import create_engine, Column, Integer, String, Date, ForeignKey, Text
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 14, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 61, in <module>
+    from . import crud
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 806, in <module>
+    class SQLCoreOperations(Generic[_T_co], ColumnOperators, TypingOnly):
+    ...<372 lines>...
+            def __rfloordiv__(self, other: Any) -> ColumnElement[Any]: ...
+  File "C:\Users\ganes\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Projects\openPaws\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1980, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
